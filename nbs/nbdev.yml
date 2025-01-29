@@ -1,0 +1,9 @@
+project:
+  output-dir: _docs
+
+website:
+  title: "fasthtml_opui"
+  site-url: "https://Deufel.github.io/fasthtml_opui"
+  description: "Fast HTML Implementation of the OpenProps UI CSS Library"
+  repo-branch: master
+  repo-url: "https://github.com/Deufel/fasthtml_opui"
