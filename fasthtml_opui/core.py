@@ -9,6 +9,9 @@ import httpx
 import shutil
 from typing import Literal
 
+from fasthtml.common import Link
+
+
 
 # %% ../nbs/00_core.ipynb 4
 class OpenPropsSync:
@@ -102,6 +105,4 @@ def OpenProps(mode: ModeType = 'dark', color: ColorType = 'cyan'):
     """
     return [
         Link(rel='stylesheet', href='static/css/main.css'),
-        
-        theme_script
     ]
