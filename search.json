@@ -1,0 +1,62 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "fasthtml_opui",
+    "section": "",
+    "text": "This Libary is designed as an educational project to make using the Open Props UI Library easy to set up with a fast HTML Web App.\nThe first part of this app will build “vendor” the required css structure for setting up the appplication to use; - Open Props CSS Custom Variables - Open Props UI",
+    "crumbs": [
+      "fasthtml_opui"
+    ]
+  },
+  {
+    "objectID": "index.html#developer-guide",
+    "href": "index.html#developer-guide",
+    "title": "fasthtml_opui",
+    "section": "Developer Guide",
+    "text": "Developer Guide\nIf you are new to using nbdev here are some useful pointers to get you started.\n\nInstall fasthtml_opui in Development mode\n# make sure fasthtml_opui package is installed in development mode\n$ pip install -e .\n\n# make changes under nbs/ directory\n# ...\n\n# compile to have changes apply to fasthtml_opui\n$ nbdev_prepare",
+    "crumbs": [
+      "fasthtml_opui"
+    ]
+  },
+  {
+    "objectID": "index.html#usage",
+    "href": "index.html#usage",
+    "title": "fasthtml_opui",
+    "section": "Usage",
+    "text": "Usage\n\nInstallation\nInstall latest from from pypi\n$ pip install fasthtml_opui\n\n\nDocumentation\nDocumentation can be found hosted on this GitHub repository’s pages. Additionally you can find package manager specific guidelines on conda and pypi respectively.",
+    "crumbs": [
+      "fasthtml_opui"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use",
+    "href": "index.html#how-to-use",
+    "title": "fasthtml_opui",
+    "section": "How to use",
+    "text": "How to use\n    from fasthtml.common import *\n    # Import specific classes from fasthtml_opui\n    from fasthtml_opui.core import OpenProps, OpenPropsSync\n    \n    # Initialize OpenProps syncer and sync files\n    syncer = OpenPropsSync()\n    syncer.sync_all()\n    \n    # Create FastHTML app\n    app, rt = fast_app(hdrs=OpenProps('dark', 'cyan'), pico=False)\n    \n    @rt('/')\n    def get():\n        return Titled(\"Welcome\",\n            Article(\n                H2(\"Hello World\"),\n                P(\"This is a FastHTML app using OpenProps UI\"),\n                Button(\"Click me!\", cls=\"button\")\n            )\n        )\n    \n    serve()",
+    "crumbs": [
+      "fasthtml_opui"
+    ]
+  },
+  {
+    "objectID": "00_core.html",
+    "href": "00_core.html",
+    "title": "fasthtml_opui",
+    "section": "",
+    "text": "source\n\n\n\n OpenPropsSync (static_dir=None)\n\nSync OpenProps and OpenProps UI files to local static directory\n\nsource\n\n\n\n\n OpenProps (mode:Literal['light','dark']='dark', color:Literal['red','pink\n            ','purple','violet','indigo','blue','cyan','teal','green','lim\n            e','yellow','orange']='cyan')\n\n*FastHTML header components for OpenProps UI\nArgs: mode: ‘light’ or ‘dark’ color: OpenProps OKLCH color*",
+    "crumbs": [
+      "core"
+    ]
+  },
+  {
+    "objectID": "00_core.html#core",
+    "href": "00_core.html#core",
+    "title": "fasthtml_opui",
+    "section": "",
+    "text": "source\n\n\n\n OpenPropsSync (static_dir=None)\n\nSync OpenProps and OpenProps UI files to local static directory\n\nsource\n\n\n\n\n OpenProps (mode:Literal['light','dark']='dark', color:Literal['red','pink\n            ','purple','violet','indigo','blue','cyan','teal','green','lim\n            e','yellow','orange']='cyan')\n\n*FastHTML header components for OpenProps UI\nArgs: mode: ‘light’ or ‘dark’ color: OpenProps OKLCH color*",
+    "crumbs": [
+      "core"
+    ]
+  }
+]
