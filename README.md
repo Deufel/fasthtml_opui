@@ -6,6 +6,20 @@
 This file will become your README and also the index of your
 documentation.
 
+This Libary is designed to make using the Open Props UI Library easy to
+set up with a fast HTML App.
+
+The first part of this app will build “vendor” the required css
+structure for setting up the appplication to use; - [Open Props CSS
+Custom Variables](https://open-props.style/) - [Open Props
+UI](https://open-props-ui.netlify.app/)
+
+This is a convience step and is not required if you have a different
+file structure you want to use.
+
+The Other Modules are designed to make implementing the Open Props UI
+components in fast HTML easy.
+
 ## Developer Guide
 
 If you are new to using `nbdev` here are some useful pointers to get you
@@ -35,12 +49,6 @@ Install latest from the GitHub
 $ pip install git+https://github.com/Deufel/fasthtml_opui.git
 ```
 
-or from [conda](https://anaconda.org/Deufel/fasthtml_opui)
-
-``` sh
-$ conda install -c Deufel fasthtml_opui
-```
-
 or from [pypi](https://pypi.org/project/fasthtml_opui/)
 
 ``` sh
@@ -58,10 +66,11 @@ find package manager specific guidelines on
 
 ## How to use
 
-Fill me in please! Don’t forget code examples:
+1.  Set Up Local CSS Folder Structure (optional)
+    `python     syncer = OpenPropsSync()     syncer.sync_all()`
 
-``` python
-1+1
-```
+2.  Start App with Linked CSS style sheet
 
-    2
+    ``` python
+    app, rt = fast_app(hdrs=OpenProps('dark', 'cyan'), pico=False)
+    ```
