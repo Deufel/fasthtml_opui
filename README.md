@@ -50,11 +50,27 @@ find package manager specific guidelines on
 
 ## How to use
 
-1.  Set Up Local CSS Folder Structure (optional)
-    `python     syncer = OpenPropsSync()     syncer.sync_all()`
-
-2.  Start App with Linked CSS style sheet
-
-    ``` python
+``` python
+    from fasthtml.common import *
+    # Import specific classes from fasthtml_opui
+    from fasthtml_opui.core import OpenProps, OpenPropsSync
+    
+    # Initialize OpenProps syncer and sync files
+    syncer = OpenPropsSync()
+    syncer.sync_all()
+    
+    # Create FastHTML app
     app, rt = fast_app(hdrs=OpenProps('dark', 'cyan'), pico=False)
-    ```
+    
+    @rt('/')
+    def get():
+        return Titled("Welcome",
+            Article(
+                H2("Hello World"),
+                P("This is a FastHTML app using OpenProps UI"),
+                Button("Click me!", cls="button")
+            )
+        )
+    
+    serve()
+```
