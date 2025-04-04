@@ -11,23 +11,9 @@ structure for setting up the appplication to use; - [Open Props CSS
 Custom Variables](https://open-props.style/) - [Open Props
 UI](https://open-props-ui.netlify.app/)
 
-## Developer Guide
-
-If you are new to using `nbdev` here are some useful pointers to get you
-started.
-
-### Install fasthtml_opui in Development mode
-
-``` sh
-# make sure fasthtml_opui package is installed in development mode
-$ pip install -e .
-
-# make changes under nbs/ directory
-# ...
-
-# compile to have changes apply to fasthtml_opui
-$ nbdev_prepare
-```
+Future : FT implementation of - Simple Theme Changer Commponent - Simple
+Color Changer Component - Tabs - Button Group - Icons - Scroll - Text
+Size Changer - Full Screen / Centered
 
 ## Usage
 
@@ -73,4 +59,36 @@ find package manager specific guidelines on
         )
     
     serve()
+```
+
+``` python
+from fasthtml.common import *
+
+
+# Import specific classes from fasthtml_opui
+from fasthtml_opui.core import OpenProps, OpenPropsSync
+
+# Initialize OpenProps syncer and sync files
+syncer = OpenPropsSync()
+syncer.sync_all()
+    
+# Optionally sync any additional custom CSS files
+syncer.sync_custom_css("https://example.com/special-styles.css", "special.css")
+
+# Set up FastHTML with head-support extension and initial theme CSS
+app, rt = fast_app(
+    exts='head-support',  # Enable head tag support
+    pico=False,
+    hdrs=(
+        Style("""
+            :root {
+                --color-scheme: system;
+                --palette-hue: 210;
+                --palette-hue-rotate-by: 0;
+                --palette-chroma: 0.89;
+            }
+        """),
+        OpenProps('custom/utilities.css'),
+    )
+)
 ```

@@ -1,0 +1,58 @@
+@layer components.has-deps {
+  /* Form layout styles */
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: stretch; /* Explicit stretch for fields */
+
+    /* Basic spacing between form elements */
+    & > * {
+      margin-bottom: var(--size-4);
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    /* Form row using flexbox for more natural flow */
+    .form-row {
+      display: flex;
+      gap: var(--size-4);
+      width: 100%;
+
+      /* Make fields grow evenly within the row */
+      & > .field {
+        flex: 1;
+      }
+
+      /* Stack on smaller screens */
+      @media (max-width: 375px) { flex-direction: column; }
+    }
+
+    /* Button alignment */
+    & > .button {
+      align-self: center;
+      width: 80%;
+    }
+
+    @media (max-width: 640px) {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  /* Card container */
+  .card form {
+    padding: var(--size-4);
+    max-inline-size: var(--size-content-2);
+    margin-inline: auto;
+
+    /* Match button width to form width */
+    & > .button,
+    & .actions {
+      width: 100%;
+      max-width: var(--size-content-2);
+    }
+  }
+}

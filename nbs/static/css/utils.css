@@ -34,7 +34,7 @@ When you visibly want to hide an element but make it accessible for screen reade
         --thumb-scale: 1.1;
       }
 
-      &:before {
+      &::before {
         --thumb-scale: 0.01;
         --highlight-size: 150%;
 
@@ -56,23 +56,5 @@ When you visibly want to hide an element but make it accessible for screen reade
         }
       }
     }
-  }
-
-/* Custom Md and below visible class */
-.md-n-below {
-  display: block; /* or flex, depending on your button's needs */
-}
-
-@media (width >= 768px) {
-  .md-n-below {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
   }
 }
